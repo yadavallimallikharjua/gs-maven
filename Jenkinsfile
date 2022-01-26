@@ -5,8 +5,8 @@ node('killer') {
 	stage('build') {
 		sh 'mvn clean package'
 	}
-	stage('archiveArtifacts artifacts') {
-		'**/TEST-*.xml', followSymlinks: false
+	stage('archive artifacts') {
+ junit '**/TEST-*.xml'
 	}
 	stage('Archive Junit-formatted test results') {
 		junit 'targert/surefire reports/.*xml'
