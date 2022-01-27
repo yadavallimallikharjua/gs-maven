@@ -1,6 +1,6 @@
 node('killer') {
     stage('git') {
-		git url: 'https://github.com/yadavallimallikharjua/gs-maven.git'
+		git branch: 'main', credentialsId: 'node0', url: 'https://github.com/yadavallimallikharjua/gs-maven.git'
 	}
 	stage('build') {
 		sh 'mvn clean package'
