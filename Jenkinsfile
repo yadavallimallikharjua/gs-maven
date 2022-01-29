@@ -6,9 +6,6 @@ node('killer') {
 		sh 'mvn -f initial/ clean package'
 	}
 	stage('archive artifacts') {
- junit '**/TEST-*.xml'
-	}
-	stage('Archive Junit-formatted test results') {
-		junit 'targert/surefire reports/.*xml'
+  'target/*.jar'
 	}
 }
