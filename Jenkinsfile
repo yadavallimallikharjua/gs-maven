@@ -1,11 +1,15 @@
-node('killer') {
-    stage('git') {
-		git branch: 'main', credentialsId: 'node0', url: 'https://github.com/yadavallimallikharjua/gs-maven.git'
+pipeline {
+	agent(node0, kller)
+	parameters(name:MAVEN_GOAL, defaultvalue:mvn package, Description:build bramch),
+	parameters([choice(name: 'BRANCH_TO_BUILD', choices: ['main', 'declarative'], description: 'build branch')])
+	stage ('scm') {
+		steps {
+			git ('url : https://github.com/yadavallimallikharjua/gs-maven.git',branch:${params.BRANCH_TO_BUILD}
+		}
 	}
-	stage('build') {
-		sh 'mvn -f initial/ clean package'
+		stage ('build') {
+			steps {
+			sh "${params.MAVEN_GOAL}"
+		}
+		}
 	}
-	stage('archive artifacts') {
-  'target/*.jar'
-	}
-}
