@@ -1,8 +1,9 @@
 pipeline {
 	agent(node0, kller)
-	parameters
+	parameters {
 	string(name: 'MAVEN_GOAL', defaultValue: 'mvn package', description: 'this is maven goal')
 	choice(name: 'BRANCH_TO_BUILD', choices: ['main', 'declarative'], description: 'build branch'
+	}
 	stages {
 	stage('scm') {
 		steps {
