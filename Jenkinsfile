@@ -7,7 +7,7 @@ pipeline {
 	stages {
 	stage('scm') {
 		steps {
-			git ('url : https://github.com/yadavallimallikharjua/gs-maven.git',branch:"${params.BRANCH_TO_BUILD}"
+			git url : 'https://github.com/yadavallimallikharjua/gs-maven.git', branch:"${params.BRANCH_TO_BUILD}"
 		}
 	}
 		stage('build') {
