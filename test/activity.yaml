@@ -5,7 +5,7 @@ metadata:
   name: activity1
 spec:
   containers:
-    - image: mysql:8.0
+    - image: mysql:8
        name: activity1
     env:
       - name: MYSQL_ROOT_PASSWORD
