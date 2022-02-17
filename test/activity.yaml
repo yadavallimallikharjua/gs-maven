@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: activity1
+spec:
+  containers:
+    - image: mysql:8.0
+       name: activity1
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: mirror
+      - name: MYSQL_DATABASE
+        value: mysql
+      - name:  MYSQL_USER
+        value: mallikharjuna
+      - name: MYSQL_PASSWORD
+        value: mallikharjuna
+        ports:
+          - containerPort: 3306
+             protocol: "TCP"
