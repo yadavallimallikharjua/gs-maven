@@ -5,17 +5,17 @@ metadata:
   name: activity2
 spec:
   containers:
-    -name: activity2
+    - name: activity2
       image: mysql:8
     env:
-      -name: MYSQL_ROOT_PASSWORD
+      - name: MYSQL_ROOT_PASSWORD
         value: mirror
-      -name: MYSQL_DATABASE
+      - name: MYSQL_DATABASE
         value: mysql
-      -name:  MYSQL_USER
+      - name:  MYSQL_USER
         value: mallikharjuna
-      -name: MYSQL_PASSWORD
+      - name: MYSQL_PASSWORD
         value: mallikharjuna
-        ports:
-          -containerPort: 3306
-             protocol: "TCP"
+    ports: 
+      - containerPort: 3306
+         protocol: "TCP"
