@@ -14,10 +14,10 @@ spec:
       labels:
         app: myapp
         version: 1.0.0
-  spec: 
-     containers:
+    spec: 
+      containers:
         - name: jenkins
-         image: jenkins:2.60.3
-   ports:
-     - containerPort: 8080
-       protocol: "TCP"      
+          image: jenkins:2.60.3
+      ports:
+        - containerPort: 8080
+          protocol: "TCP"      
